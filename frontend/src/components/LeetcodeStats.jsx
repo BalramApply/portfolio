@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Smile, Hash, BicepsFlexed, ThumbsUp } from "lucide-react";
-import "./leetcodeStatus.css"
+import "./LeetcodeStatus.css"
 export const LeetCodeStats = () => {
   const [stats, setStats] = useState({
     totalSolved: 0,
