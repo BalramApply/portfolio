@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './Pages/Home';
+import Home from './pages/Home';
 import LoadingScreen from './Components/LoadingScreen';
 import { ErrorBoundary } from 'react-error-boundary';
 import ProjectImageGallery from './pages/ProjectImages';
