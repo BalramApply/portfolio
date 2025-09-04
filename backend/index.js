@@ -8,7 +8,17 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-app.use(cors());
+
+// ✅ Proper CORS configuration
+app.use(cors({
+  origin: [
+    "http://localhost:5173", 
+    "https://portfolio-balram-indol.vercel.app"
+  ],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // ---------------- EMAIL API -----------------
