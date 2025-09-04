@@ -1,0 +1,214 @@
+/* Dark Theme Heatmap Styles */
+/* Using Charcoal gray (#2C2C2C) with deep burgundy (#800020) and cream (#F5F5DC) */
+
+#leetcode {
+  position: relative;
+  overflow: hidden;
+}
+
+#leetcode::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* Heatmap Container */
+.react-calendar-heatmap {
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(128, 0, 32, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Heatmap SVG Styling */
+.react-calendar-heatmap svg {
+  border-radius: 8px;
+}
+
+/* Empty/No Activity */
+.heatmap-empty {
+  fill: #1a1a1a;
+  stroke: rgba(245, 245, 220, 0.1);
+  stroke-width: 0.5;
+  rx: 2;
+  transition: all 0.3s ease;
+}
+
+.heatmap-empty:hover {
+  fill: #2C2C2C;
+  stroke: rgba(245, 245, 220, 0.3);
+  transform: scale(1.1);
+}
+
+/* Activity Level 1 (Low) */
+.heatmap-scale-1 {
+  fill: rgba(128, 0, 32, 0.3);
+  stroke: rgba(245, 245, 220, 0.2);
+  stroke-width: 0.5;
+  rx: 2;
+  transition: all 0.3s ease;
+}
+
+.heatmap-scale-1:hover {
+  fill: rgba(128, 0, 32, 0.5);
+  stroke: rgba(245, 245, 220, 0.4);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(128, 0, 32, 0.4));
+}
+
+/* Activity Level 2 (Medium-Low) */
+.heatmap-scale-2 {
+  fill: rgba(128, 0, 32, 0.6);
+  stroke: rgba(245, 245, 220, 0.3);
+  stroke-width: 0.5;
+  rx: 2;
+  transition: all 0.3s ease;
+}
+
+.heatmap-scale-2:hover {
+  fill: rgba(128, 0, 32, 0.8);
+  stroke: rgba(245, 245, 220, 0.5);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(128, 0, 32, 0.6));
+}
+
+/* Activity Level 3 (Medium-High) */
+.heatmap-scale-3 {
+  fill: #800020;
+  stroke: rgba(245, 245, 220, 0.4);
+  stroke-width: 0.5;
+  rx: 2;
+  transition: all 0.3s ease;
+}
+
+.heatmap-scale-3:hover {
+  fill: #a00028;
+  stroke: rgba(245, 245, 220, 0.6);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(128, 0, 32, 0.8));
+}
+
+/* Activity Level 4 (High) */
+.heatmap-scale-4 {
+  fill: linear-gradient(135deg, #800020 0%, #a00028 100%);
+  stroke: #F5F5DC;
+  stroke-width: 1;
+  rx: 2;
+  transition: all 0.3s ease;
+}
+
+.heatmap-scale-4:hover {
+  fill: #F5F5DC;
+  stroke: #800020;
+  stroke-width: 2;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(245, 245, 220, 0.8));
+}
+
+/* Month Labels */
+.react-calendar-heatmap-month-label {
+  fill: #F5F5DC;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Weekday Labels */
+.react-calendar-heatmap-weekday-label {
+  fill: rgba(245, 245, 220, 0.7);
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Tooltip Styling */
+.heatmap-tooltip {
+  border: 1px solid #800020;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #F5F5DC;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Alternative Color Schemes (uncomment to use) */
+
+/* Forest Green Theme */
+/*
+.heatmap-scale-1 { fill: rgba(1, 50, 32, 0.3); }
+.heatmap-scale-2 { fill: rgba(1, 50, 32, 0.6); }
+.heatmap-scale-3 { fill: #013220; }
+.heatmap-scale-4 { fill: linear-gradient(135deg, #013220 0%, #FFD700 100%); }
+*/
+
+/* Navy Blue Theme */
+/*
+.heatmap-scale-1 { fill: rgba(28, 28, 58, 0.3); }
+.heatmap-scale-2 { fill: rgba(28, 28, 58, 0.6); }
+.heatmap-scale-3 { fill: #1C1C3A; }
+.heatmap-scale-4 { fill: linear-gradient(135deg, #1C1C3A 0%, #B87333 100%); }
+*/
+
+/* Legend Styles (if you want to add a legend) */
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(245, 245, 220, 0.7);
+}
+
+.heatmap-legend-item {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 0.5px solid rgba(245, 245, 220, 0.2);
+}
+
+.heatmap-legend-empty { background: #1a1a1a; }
+.heatmap-legend-low { background: rgba(128, 0, 32, 0.3); }
+.heatmap-legend-medium { background: rgba(128, 0, 32, 0.6); }
+.heatmap-legend-high { background: #800020; }
+.heatmap-legend-max { background: linear-gradient(135deg, #800020 0%, #F5F5DC 100%); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .react-calendar-heatmap {
+    padding: 16px;
+  }
+  
+  .react-calendar-heatmap svg {
+    width: 100%;
+    height: auto;
+  }
+  
+  .react-calendar-heatmap-month-label {
+    font-size: 10px;
+  }
+  
+  .react-calendar-heatmap-weekday-label {
+    font-size: 8px;
+  }
+}
+
+/* Animation for loading */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.react-calendar-heatmap {
+  animation: fadeInUp 0.8s ease-out;
+}

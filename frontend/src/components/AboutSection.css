@@ -1,0 +1,373 @@
+/* About.css - Dark Portfolio Theme */
+/* Color Palette: Deep Navy + Emerald Accent */
+
+.about-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 8rem 5% 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Main Content */
+.about-content {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Image Section */
+.about-image img{
+  border-radius: 50%;
+}
+
+/* Text Section */
+.about-text {
+  color: #E2E8F0;
+  position: relative;
+}
+
+.about-text::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #10B981, #059669);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.about-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #E2E8F0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.highlight-me {
+  background: linear-gradient(135deg, #10B981, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-me::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10B981, #059669);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: rgba(226, 232, 240, 0.9);
+  max-width: 600px;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 2.5rem;
+}
+
+.about-text strong {
+  color: #10B981;
+  font-weight: 600;
+  position: relative;
+}
+
+.about-text strong::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #10B981, transparent);
+  opacity: 0.5;
+}
+
+/* Connect Button */
+.connectBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.connectBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.connectBtn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.connectBtn:hover::before {
+  left: 100%;
+}
+
+.connectBtn:active {
+  transform: translateY(-1px);
+}
+
+.connectBtn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.connectBtn:hover svg {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 6rem 4% 4rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-image img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .about-text h1 {
+    font-size: 3rem;
+  }
+  
+  .about-text::before {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 5rem 3% 3rem;
+  }
+  
+  .about-content {
+    gap: 2.5rem;
+  }
+  
+  .about-image img {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .about-text p:last-of-type {
+    margin-bottom: 2rem;
+  }
+  
+  .connectBtn {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 4rem 2% 2rem;
+  }
+  
+  .about-content {
+    gap: 2rem;
+  }
+  
+  .about-image img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .about-text h1 {
+    font-size: 2rem;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .connectBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .about-text h1 {
+    color: #FFFFFF;
+  }
+  
+  .highlight-me {
+    -webkit-text-fill-color: #10B981;
+    color: #10B981;
+  }
+  
+  .about-text p {
+    color: #FFFFFF;
+  }
+  
+  .about-image img {
+    border-color: #10B981;
+    filter: brightness(1.2) contrast(1.3);
+  }
+  
+  .connectBtn {
+    background: #10B981;
+    border: 2px solid #FFFFFF;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-image::before {
+    animation: none;
+  }
+  
+  .about-image img,
+  .connectBtn {
+    transition: none;
+  }
+  
+  .about-image img:hover {
+    transform: none;
+  }
+  
+  .connectBtn:hover {
+    transform: none;
+  }
+  
+  .connectBtn::before {
+    display: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .about-container {
+    background: white;
+    color: black;
+    padding: 2rem;
+    min-height: auto;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about-text h1,
+  .highlight-me,
+  .about-text strong {
+    color: black;
+    -webkit-text-fill-color: black;
+  }
+  
+  .about-text p {
+    color: black;
+  }
+  
+  .connectBtn {
+    display: none;
+  }
+  
+  .about-image::before {
+    display: none;
+  }
+}
+
+/* Loading Animation */
+.about-container[data-aos="fade-in"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.about-container[data-aos="fade-in"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Focus States for Accessibility */
+.connectBtn:focus {
+  outline: 3px solid rgba(16, 185, 129, 0.5);
+  outline-offset: 3px;
+}
+
+.connectBtn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Additional Visual Enhancement */
+.about-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 3;
+}

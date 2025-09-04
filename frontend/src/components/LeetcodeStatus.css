@@ -1,0 +1,295 @@
+/* LeetCode Stats Dark Theme Styles */
+/* Matching the heatmap color palette: Charcoal gray (#2C2C2C) with deep burgundy (#800020) and cream (#F5F5DC) */
+
+/* Gradient Border Cards */
+.gradient-border {
+  position: relative;
+  background: rgba(44, 44, 44, 0.9);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(128, 0, 32, 0.6) 0%,
+    rgba(245, 245, 220, 0.3) 25%,
+    rgba(128, 0, 32, 0.4) 50%,
+    rgba(245, 245, 220, 0.2) 75%,
+    rgba(128, 0, 32, 0.6) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  z-index: -1;
+}
+
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 30%, 
+    rgba(128, 0, 32, 0.1) 0%, 
+    transparent 60%
+  );
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  cursor: pointer;
+  transform: translateY(0);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(128, 0, 32, 0.1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(128, 0, 32, 0.3),
+    0 0 30px rgba(128, 0, 32, 0.2);
+}
+
+.card-hover:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(128, 0, 32, 0.8) 0%,
+    rgba(245, 245, 220, 0.5) 25%,
+    rgba(128, 0, 32, 0.6) 50%,
+    rgba(245, 245, 220, 0.4) 75%,
+    rgba(128, 0, 32, 0.8) 100%
+  );
+}
+
+.card-hover:hover::after {
+  background: radial-gradient(
+    circle at 30% 30%, 
+    rgba(128, 0, 32, 0.2) 0%, 
+    transparent 60%
+  );
+}
+
+/* Content Positioning */
+.gradient-border > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon Container Styling */
+.gradient-border .p-3.rounded-full {
+  background: linear-gradient(135deg, rgba(128, 0, 32, 0.2) 0%, rgba(245, 245, 220, 0.1) 100%);
+  border: 1px solid rgba(128, 0, 32, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card-hover:hover .p-3.rounded-full {
+  background: linear-gradient(135deg, rgba(128, 0, 32, 0.3) 0%, rgba(245, 245, 220, 0.2) 100%);
+  border: 1px solid rgba(245, 245, 220, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(128, 0, 32, 0.3);
+}
+
+/* Text Styling */
+.gradient-border h4 {
+  color: #F5F5DC;
+  font-weight: 600;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.card-hover:hover h4 {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(245, 245, 220, 0.3);
+}
+
+.gradient-border p {
+  color: rgba(245, 245, 220, 0.7);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover p {
+  color: #F5F5DC;
+  transform: scale(1.05);
+}
+
+/* Individual Card Customizations */
+.gradient-border:nth-child(1) {
+  /* Total Solved - Primary accent */
+  border: 1px solid rgba(128, 0, 32, 0.4);
+}
+
+.gradient-border:nth-child(1):hover {
+  border: 1px solid rgba(128, 0, 32, 0.6);
+}
+
+.gradient-border:nth-child(2) {
+  /* Easy - Green accent */
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.gradient-border:nth-child(2):hover {
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(34, 197, 94, 0.2);
+}
+
+.gradient-border:nth-child(2)::before {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.4) 0%,
+    rgba(245, 245, 220, 0.3) 50%,
+    rgba(34, 197, 94, 0.4) 100%
+  );
+}
+
+.gradient-border:nth-child(3) {
+  /* Medium - Yellow accent */
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.gradient-border:nth-child(3):hover {
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(234, 179, 8, 0.2);
+}
+
+.gradient-border:nth-child(3)::before {
+  background: linear-gradient(
+    135deg,
+    rgba(234, 179, 8, 0.4) 0%,
+    rgba(245, 245, 220, 0.3) 50%,
+    rgba(234, 179, 8, 0.4) 100%
+  );
+}
+
+.gradient-border:nth-child(4) {
+  /* Hard - Red accent */
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.gradient-border:nth-child(4):hover {
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+.gradient-border:nth-child(4)::before {
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.4) 0%,
+    rgba(245, 245, 220, 0.3) 50%,
+    rgba(239, 68, 68, 0.4) 100%
+  );
+}
+
+/* Icon Color Overrides for Difficulty Levels */
+.text-green-500 {
+  color: #22c55e !important;
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover .text-green-500 {
+  color: #16a34a !important;
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.5));
+}
+
+.text-yellow-500 {
+  color: #eab308 !important;
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover .text-yellow-500 {
+  color: #ca8a04 !important;
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.5));
+}
+
+.text-red-500 {
+  color: #ef4444 !important;
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover .text-red-500 {
+  color: #dc2626 !important;
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.5));
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gradient-border.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(44, 44, 44, 0.9) 25%,
+    rgba(128, 0, 32, 0.1) 50%,
+    rgba(44, 44, 44, 0.9) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gradient-border {
+    padding: 1rem !important;
+  }
+  
+  .gradient-border h4 {
+    font-size: 1rem;
+  }
+  
+  .gradient-border p {
+    font-size: 1.25rem;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Animation for stats appearance */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.gradient-border {
+  animation: fadeInScale 0.6s ease-out;
+}
+
+.gradient-border:nth-child(1) { animation-delay: 0.1s; }
+.gradient-border:nth-child(2) { animation-delay: 0.2s; }
+.gradient-border:nth-child(3) { animation-delay: 0.3s; }
+.gradient-border:nth-child(4) { animation-delay: 0.4s; }
