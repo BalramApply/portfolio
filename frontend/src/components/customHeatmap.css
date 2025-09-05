@@ -48,7 +48,7 @@
 .heatmap-scale-1 {
   fill: rgba(128, 0, 32, 0.3);
   stroke: rgba(245, 245, 220, 0.2);
-  stroke-width: 0.5;
+  stroke-width: 1;
   rx: 2;
   transition: all 0.3s ease;
 }
@@ -64,7 +64,7 @@
 .heatmap-scale-2 {
   fill: rgba(128, 0, 32, 0.6);
   stroke: rgba(245, 245, 220, 0.3);
-  stroke-width: 0.5;
+  stroke-width: 1;
   rx: 2;
   transition: all 0.3s ease;
 }
@@ -80,7 +80,7 @@
 .heatmap-scale-3 {
   fill: #800020;
   stroke: rgba(245, 245, 220, 0.4);
-  stroke-width: 0.5;
+  stroke-width: 1;
   rx: 2;
   transition: all 0.3s ease;
 }
@@ -94,7 +94,7 @@
 
 /* Activity Level 4 (High) */
 .heatmap-scale-4 {
-  fill: linear-gradient(135deg, #800020 0%, #a00028 100%);
+  fill: #ff0040;
   stroke: #F5F5DC;
   stroke-width: 1;
   rx: 2;
@@ -102,7 +102,7 @@
 }
 
 .heatmap-scale-4:hover {
-  fill: #F5F5DC;
+  fill: #ff0040;
   stroke: #800020;
   stroke-width: 2;
   transform: scale(1.1);
