@@ -350,3 +350,130 @@
     display: none;
   }
 }
+
+/* FreeCounterStat Visitor Counter Styles */
+.site-footer__visitor-counter {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.visitor-counter-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* background: rgba(255, 255, 255, 0.05); */
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+  /* border-radius: 25px; */
+  /* padding: 0.75rem 1.5rem; */
+  /* backdrop-filter: blur(10px); */
+  transition: all 0.3s ease;
+}
+
+.visitor-counter-display:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.visitor-icon {
+  color: #00d4ff;
+  flex-shrink: 0;
+}
+
+.visitor-label {
+  color: #e8e8e8;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.counter-numbers {
+  color: #00d4ff;
+  font-weight: 600;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 0.95rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Style the FreeCounterStat counter when it loads */
+#sfcwxpc39h6c43dygw57esjf22645jtqdq7 {
+  color: #00d4ff !important;
+  font-weight: 600 !important;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace !important;
+  font-size: 0.95rem !important;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Hide any FreeCounterStat branding links */
+/* #sfcwxpc39h6c43dygw57esjf22645jtqdq7 a[href*="freecounterstat"],
+#sfcwxpc39h6c43dygw57esjf22645jtqdq7 a[href*="optistats"] {
+  display: none !important;
+} */
+
+/* Style the noscript fallback image */
+.visitor-counter-display noscript img {
+  max-height: 18px;
+  border: none;
+  filter: invert(1) brightness(0.9);
+  transition: all 0.3s ease;
+}
+
+.visitor-counter-display noscript img:hover {
+  filter: invert(1) brightness(1) drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
+}
+
+/* Loading state before counter appears - make it less prominent */
+.counter-numbers:empty::before {
+  content: "---";
+  color: #666;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.counter-fallback {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  /* .visitor-counter-display {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  } */
+  
+  .visitor-label {
+    font-size: 0.8rem;
+  }
+  
+  .counter-numbers {
+    font-size: 0.85rem;
+    min-width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .visitor-counter-display {
+    padding: 0.5rem 1rem;
+  } */
+  
+  .visitor-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Dark theme compatibility */
+@media (prefers-color-scheme: dark) {
+  .visitor-counter-display {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .visitor-counter-display:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}

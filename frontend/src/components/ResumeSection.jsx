@@ -83,11 +83,11 @@ const ResumeSection = () => {
 
             <div className="resume-stats">
               <div className="stats-item">
-                <span className="stats-number">5+</span>
+                <span className="stats-number">9+</span>
                 <span className="stats-label">Projects Completed</span>
               </div>
               <div className="stats-item">
-                <span className="stats-number">10+</span>
+                <span className="stats-number">15+</span>
                 <span className="stats-label">Technologies</span>
               </div>
             </div>

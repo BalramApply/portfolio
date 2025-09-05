@@ -31,7 +31,7 @@
 
 /* Empty/No Activity */
 .heatmap-empty {
-  fill: #1a1a1a;
+  fill: url(#emptyGradient);
   stroke: rgba(245, 245, 220, 0.1);
   stroke-width: 0.5;
   rx: 2;
@@ -47,66 +47,70 @@
 /* Activity Level 1 (Low) */
 .heatmap-scale-1 {
   fill: rgba(128, 0, 32, 0.3);
-  stroke: rgba(245, 245, 220, 0.2);
-  stroke-width: 1;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 0.1;
   rx: 2;
   transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgb(255, 0, 32, 1));
 }
 
 .heatmap-scale-1:hover {
   fill: rgba(128, 0, 32, 0.5);
-  stroke: rgba(245, 245, 220, 0.4);
+  stroke: rgba(245, 245, 220, 1);
   transform: scale(1.1);
-  filter: drop-shadow(0 0 8px rgba(128, 0, 32, 0.4));
+  filter: drop-shadow(0 0 8px rgba(128, 0, 32, 1));
 }
 
 /* Activity Level 2 (Medium-Low) */
 .heatmap-scale-2 {
   fill: rgba(128, 0, 32, 0.6);
-  stroke: rgba(245, 245, 220, 0.3);
-  stroke-width: 1;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 0.5;
   rx: 2;
   transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgb(128, 0, 32, 1));
 }
 
 .heatmap-scale-2:hover {
   fill: rgba(128, 0, 32, 0.8);
-  stroke: rgba(245, 245, 220, 0.5);
+  stroke: rgb(255, 255, 255, 1);
   transform: scale(1.1);
-  filter: drop-shadow(0 0 10px rgba(128, 0, 32, 0.6));
+  filter: drop-shadow(0 0 10px rgba(128, 0, 32, 1));
 }
 
 /* Activity Level 3 (Medium-High) */
 .heatmap-scale-3 {
   fill: #800020;
-  stroke: rgba(245, 245, 220, 0.4);
+  stroke: rgba(255, 255, 255, 1);
   stroke-width: 1;
   rx: 2;
   transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgb(134, 0, 34, 1));
 }
 
 .heatmap-scale-3:hover {
   fill: #a00028;
-  stroke: rgba(245, 245, 220, 0.6);
+  stroke: rgba(255, 255, 255, 1);
   transform: scale(1.1);
-  filter: drop-shadow(0 0 12px rgba(128, 0, 32, 0.8));
+  filter: drop-shadow(0 0 12px rgba(128, 0, 32, 1));
 }
 
 /* Activity Level 4 (High) */
 .heatmap-scale-4 {
   fill: #ff0040;
-  stroke: #F5F5DC;
+  stroke: rgba(255, 255, 255, 1);
   stroke-width: 1;
   rx: 2;
   transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgb(255, 0, 64, 1));
 }
 
 .heatmap-scale-4:hover {
   fill: #ff0040;
-  stroke: #800020;
+  stroke: rgba(255, 255, 255, 1);
   stroke-width: 2;
   transform: scale(1.1);
-  filter: drop-shadow(0 0 15px rgba(245, 245, 220, 0.8));
+  filter: drop-shadow(0 0 15px rgb(255, 0, 85));
 }
 
 /* Month Labels */

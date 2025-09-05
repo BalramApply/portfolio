@@ -194,7 +194,7 @@ export const SkillsSection = () => {
             <span className="stat-label">Years Experience</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">15+</span>
+            <span className="stat-number">9+</span>
             <span className="stat-label">Projects Built</span>
           </div>
         </motion.div>

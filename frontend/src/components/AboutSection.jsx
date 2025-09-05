@@ -17,7 +17,7 @@ export const AboutSection = () => {
               stack developer dedicated to crafting seamless, scalable web
               applications. I specialize in leveraging modern technologies like{" "}
               <strong>React</strong>, <strong>Node.js</strong>,{" "}
-              <strong>Firebase</strong>, <strong>MongoDB</strong>, and{" "}
+              <strong>Express.js</strong>, <strong>MongoDB</strong>, and{" "}
               <strong>many others</strong> to build user-centric digital
               experiences.
             </p>
