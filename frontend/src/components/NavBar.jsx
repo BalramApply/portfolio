@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-
+import "./Navbar.css";
 const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
@@ -30,7 +30,7 @@ export const NavBar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-10"
+        isScrolled ? "py-3" : "py-10"
       )}
     >
       <div className="container flex items-center justify-center relative">
@@ -118,9 +118,7 @@ export const NavBar = () => {
 
           {/* Close hint */}
           <div className="absolute bottom-10 text-center">
-            <p className="text-sm text-foreground/50">
-              Tap anywhere to close
-            </p>
+            
           </div>
         </div>
 
