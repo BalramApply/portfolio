@@ -27,10 +27,10 @@ export const Home = () => {
             <main>
                 <HeroSection />
                 <AboutSection />
-                <Heatmap />
                 <SkillsSection />
                 <ProjectsSection />
                 <ExperienceSection />
+                <Heatmap /> 
                 <ResumeSection />
                 <ContactSection />
             </main>

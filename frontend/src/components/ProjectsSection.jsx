@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export const ProjectsSection = () => {
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState("major");
 
   const majorProjectsData = [
     {
@@ -196,8 +196,10 @@ export const ProjectsSection = () => {
         return { major: featuredProjects, minor: [] };
       case "minor":
         return { major: [], minor: minorProjectsData };
-      default:
+      case "all":
         return { major: featuredProjects, minor: minorProjectsData };
+      default:
+        return { major: featuredProjects, minor: [] };
     }
   };
 

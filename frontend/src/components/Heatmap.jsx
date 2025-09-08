@@ -40,7 +40,7 @@ const Heatmap = () => {
     <div className="container mx-auto max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="">
         <HeatMap
-          startDate={new Date("2025-07-21")}  // or dynamically use 60 days ago
+          startDate={new Date("2025-08-1")}  // or dynamically use 60 days ago
           endDate={new Date()}
           values={leetcodeData}
           classForValue={classForValue}
