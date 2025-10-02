@@ -9,6 +9,29 @@ export const ProjectsSection = () => {
   const majorProjectsData = [
     {
       id: 1,
+      title: "WealthStream – Stock, Bonds & Funds Trading Platform",
+      description:
+        "A full MERN stack investment simulation platform with authentication, KYC, live charts, portfolio tracking, and interactive dashboards.",
+      longDescription:
+        "WealthStream is a complete MERN stack investment simulation platform that provides users with an interactive experience of wealth management. It includes authentication & KYC using JWT, PAN validation, and document upload.",
+
+      technologies: [
+        "React.js",
+        "Express.js",
+        "Multer",
+        "Chart.js",
+        "Jest",
+      ],
+      category: "Full Stack",
+      image: "/Assets/wealth_Stream.png", // replace with actual image path
+      liveUrl: "https://wealth-stream-ashy.vercel.app/",
+      featured: true,
+      status: "Completed",
+      year: "2025",
+    },
+
+    {
+      id: 2,
       title: "Zerodha The Stock Place",
       description: "A feature-rich stock trading platform inspired by Zerodha.",
       longDescription:
@@ -32,7 +55,7 @@ export const ProjectsSection = () => {
       year: "2025",
     },
     {
-      id: 2,
+      id: 3,
       title: "ProConnect Social Place",
       description: "A professional networking platform inspired by LinkedIn.",
       longDescription:
@@ -56,7 +79,7 @@ export const ProjectsSection = () => {
       year: "2025",
     },
     {
-      id: 3,
+      id: 4,
       title: "Video Connecting",
       description: "A real-time video conferencing platform inspired by Zoom.",
       longDescription:
@@ -80,7 +103,7 @@ export const ProjectsSection = () => {
       year: "2025",
     },
     {
-      id: 4,
+      id: 5,
       title: "Chat the Conversation Point ",
       description: "A real-time chat platform for fast, secure conversations",
       longDescription:
@@ -122,67 +145,64 @@ export const ProjectsSection = () => {
       year: "2024",
     },
     {
-  id: 102,
-  title: "Student Registration Form",
-  description:
-    "A responsive web-based registration form for students with validation and data persistence.",
-  longDescription:
-    "The Student Registration Form project allows users to enter and submit their details such as name, age, email, course selection, and more. The form is built with HTML, CSS, and JavaScript to provide real-time validation and a user-friendly experience. It ensures data accuracy with validation checks (e.g., email format, required fields) and stores the submitted data using Local Storage for persistence",
-  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
-  category: "Frontend",
-  image: "/Assets/studentData.png",
-  liveUrl: "https://student-registration-form-demo.netlify.app/",
-  githubUrl: "https://github.com/username/student-registration-form",
-  status: "Completed",
-  year: "2024"
-}
-,
+      id: 102,
+      title: "Student Registration Form",
+      description:
+        "A responsive web-based registration form for students with validation and data persistence.",
+      longDescription:
+        "The Student Registration Form project allows users to enter and submit their details such as name, age, email, course selection, and more. The form is built with HTML, CSS, and JavaScript to provide real-time validation and a user-friendly experience. It ensures data accuracy with validation checks (e.g., email format, required fields) and stores the submitted data using Local Storage for persistence",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
+      category: "Frontend",
+      image: "/Assets/studentData.png",
+      liveUrl: "https://student-registration-form-demo.netlify.app/",
+      githubUrl: "https://github.com/username/student-registration-form",
+      status: "Completed",
+      year: "2024",
+    },
     {
-  id: 103,
-  title: "Coin Toss",
-  description:
-    "A simple and fun web app to flip a virtual coin and track results.",
-  longDescription:
-    "The Coin Toss project is an interactive game where users can flip a virtual coin to get Heads or Tails. Built using HTML, CSS, and JavaScript, the app features smooth animations, random outcomes, and real-time result display. It also tracks the total number of flips, heads, and tails using Local Storage so that the stats persist even after page reload.",
-  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
-  category: "Frontend",
-  image: "/Assets/coinToss.png",
-  liveUrl: "https://cointossapp.netlify.app/",
-  githubUrl: "https://github.com/username/cointoss-app",
-  status: "Completed",
-  year: "2024"
-}
-,
+      id: 103,
+      title: "Coin Toss",
+      description:
+        "A simple and fun web app to flip a virtual coin and track results.",
+      longDescription:
+        "The Coin Toss project is an interactive game where users can flip a virtual coin to get Heads or Tails. Built using HTML, CSS, and JavaScript, the app features smooth animations, random outcomes, and real-time result display. It also tracks the total number of flips, heads, and tails using Local Storage so that the stats persist even after page reload.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
+      category: "Frontend",
+      image: "/Assets/coinToss.png",
+      liveUrl: "https://cointossapp.netlify.app/",
+      githubUrl: "https://github.com/username/cointoss-app",
+      status: "Completed",
+      year: "2024",
+    },
     {
-  id: 104,
-  title: "Hidden Numbers",
-  description: "An interactive number guessing game with hidden values.",
-  longDescription:
-    "Hidden Numbers is a fun and challenging browser-based game where players try to guess hidden numbers within a given range. The app provides instant feedback on whether the guess is too high, too low, or correct. It includes score tracking, levels of difficulty, and smooth animations to enhance the gaming experience. Built with HTML, CSS, and JavaScript.",
-  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
-  category: "Frontend",
-  image: "/Assets/hideNumbers.png",
-  liveUrl: "https://numberinggame.netlify.app/",
-  githubUrl: "https://github.com/username/hidden-numbers-game",
-  status: "Completed",
-  year: "2023"
-}
-,
+      id: 104,
+      title: "Hidden Numbers",
+      description: "An interactive number guessing game with hidden values.",
+      longDescription:
+        "Hidden Numbers is a fun and challenging browser-based game where players try to guess hidden numbers within a given range. The app provides instant feedback on whether the guess is too high, too low, or correct. It includes score tracking, levels of difficulty, and smooth animations to enhance the gaming experience. Built with HTML, CSS, and JavaScript.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
+      category: "Frontend",
+      image: "/Assets/hideNumbers.png",
+      liveUrl: "https://numberinggame.netlify.app/",
+      githubUrl: "https://github.com/username/hidden-numbers-game",
+      status: "Completed",
+      year: "2023",
+    },
     {
-  id: 105,
-  title: "Background Color Changer",
-  description:
-    "A simple app to change and experiment with background colors dynamically.",
-  longDescription:
-    "The Background Color Changer is an interactive web project where users can change the background color of the page with a single click. It includes features like random color generation, manual color input (HEX/RGB), and a copy-to-clipboard option for selected colors. This project demonstrates JavaScript DOM manipulation, event handling, and responsive design with Bootstrap.",
-  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
-  category: "Frontend",
-  image: "/Assets/bgColorChanger.png",
-  liveUrl: "https://bgchangersite.netlify.app/",
-  githubUrl: "https://github.com/username/bg-color-changer",
-  status: "Completed",
-  year: "2024"
-},
+      id: 105,
+      title: "Background Color Changer",
+      description:
+        "A simple app to change and experiment with background colors dynamically.",
+      longDescription:
+        "The Background Color Changer is an interactive web project where users can change the background color of the page with a single click. It includes features like random color generation, manual color input (HEX/RGB), and a copy-to-clipboard option for selected colors. This project demonstrates JavaScript DOM manipulation, event handling, and responsive design with Bootstrap.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Local Storage"],
+      category: "Frontend",
+      image: "/Assets/bgColorChanger.png",
+      liveUrl: "https://bgchangersite.netlify.app/",
+      githubUrl: "https://github.com/username/bg-color-changer",
+      status: "Completed",
+      year: "2024",
+    },
   ];
 
   const featuredProjects = majorProjectsData.filter(
