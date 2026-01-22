@@ -8,7 +8,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 10) {
+        if (prev >= 100) {
           clearInterval(interval);
           onLoadingComplete();
           return 100;

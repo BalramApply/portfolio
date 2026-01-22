@@ -185,7 +185,7 @@ export const HeroSection = () => {
 
       <div className="image-wrapper">
         <img
-          src="/Assets/profileimages.jpg"
+          src="/Assets/profileimages.png"
           alt="Balram Patel"
           className="profile-image"
         />

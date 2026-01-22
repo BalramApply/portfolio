@@ -126,11 +126,50 @@ export const ProjectsSection = () => {
       status: "Completed",
       year: "2024",
     },
+    {
+      id: 6,
+      title: "Learning Managemnt System",
+      description: "learing management system where student learning through expart",
+      longDescription:
+        "Built with PHP, MySql, JavaScript, and Bootstrap, this app delivers 1:1 s over platform with  Learn study, and presence. Features JWT auth, image/file uploads, and a responsive UI tailored for mobile and desktop.",
+
+      technologies: [
+        "PHP",
+        "JavaScript",
+        "Bootstrap",
+        "cloudinary",
+        "MySQL",
+        "jsonwebtoken",
+        "cookie-parser",
+      ],
+      category: "Full Stack",
+      image: "/Assets/mini-LMS.png",
+
+      liveUrl: "https://lms-bp.gt.tc/",
+      featured: true,
+      status: "Completed",
+      year: "2026",
+    },
   ];
 
   const minorProjectsData = [
     {
       id: 101,
+      title: "Amazon Clone – Frontend Web Application",
+      description:
+        "A responsive Amazon clone frontend built using modern web technologies, replicating the core UI and user experience of the Amazon e-commerce platform",
+      longDescription:
+        "The Amazon Clone Frontend is a fully responsive web application designed to replicate the look and feel of the Amazon e-commerce platform. This project demonstrates strong frontend development skills, including layout design",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "VS-Code"],
+      category: "Frontend",
+      image: "/Assets/amazone.png",
+      liveUrl: "https://gussinggame.netlify.app/",
+      githubUrl: "https://github.com/username/exclusive-ecommerce",
+      status: "Completed",
+      year: "2024",
+    },
+    {
+      id: 102,
       title: "Dice Rolling Guessing Number Game",
       description:
         "A fast, browser-based dice game where you guess 1–6, roll the virtual die, and score points. Built with HTML, CSS, JavaScript, and Bootstrap, with high scores saved in Local Storage.",
@@ -145,7 +184,7 @@ export const ProjectsSection = () => {
       year: "2024",
     },
     {
-      id: 102,
+      id: 103,
       title: "Student Registration Form",
       description:
         "A responsive web-based registration form for students with validation and data persistence.",
@@ -160,7 +199,7 @@ export const ProjectsSection = () => {
       year: "2024",
     },
     {
-      id: 103,
+      id: 104,
       title: "Coin Toss",
       description:
         "A simple and fun web app to flip a virtual coin and track results.",
@@ -175,7 +214,7 @@ export const ProjectsSection = () => {
       year: "2024",
     },
     {
-      id: 104,
+      id: 105,
       title: "Hidden Numbers",
       description: "An interactive number guessing game with hidden values.",
       longDescription:
@@ -189,7 +228,7 @@ export const ProjectsSection = () => {
       year: "2023",
     },
     {
-      id: 105,
+      id: 106,
       title: "Background Color Changer",
       description:
         "A simple app to change and experiment with background colors dynamically.",
