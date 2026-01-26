@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Smile, Hash, BicepsFlexed, ThumbsUp } from "lucide-react";
-import "./LeetcodeStatus.css"
+import { Smile, Hash, Zap, ThumbsUp } from "lucide-react";
+import "./LeetcodeStatus.css";
+
 export const LeetCodeStats = () => {
   const [stats, setStats] = useState({
     totalSolved: 0,
@@ -10,35 +11,34 @@ export const LeetCodeStats = () => {
   });
 
   useEffect(() => {
-  const username = import.meta.env.VITE_LEETCODE; 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-fetch(`${backendUrl}/leetcode/${username}`)
-
-    .then((res) => res.json())
-    .then((data) => {
-      if (data) {
+    const username = import.meta.env.VITE_LEETCODE; 
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    fetch(`${backendUrl}/leetcode/${username}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setStats({
+            totalSolved: data.totalSolved || 0,
+            easySolved: data.easySolved || 0,
+            mediumSolved: data.mediumSolved || 0,
+            hardSolved: data.hardSolved || 0,
+          });
+        }
+      })
+      .catch(() => {
         setStats({
-          totalSolved: data.totalSolved || 0,
-          easySolved: data.easySolved || 0,
-          mediumSolved: data.mediumSolved || 0,
-          hardSolved: data.hardSolved || 0,
+          totalSolved: 0,
+          easySolved: 0,
+          mediumSolved: 0,
+          hardSolved: 0,
         });
-      }
-    })
-    .catch(() => {
-      setStats({
-        totalSolved: 0,
-        easySolved: 0,
-        mediumSolved: 0,
-        hardSolved: 0,
       });
-    });
-}, []);
+  }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-6 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full">
       {/* Total Solved */}
-      <div className="  p-6 card-hover">
+      <div className="p-6 card-hover">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-full bg-primary/10">
             <Hash className="h-6 w-6 text-primary" />
@@ -51,7 +51,7 @@ fetch(`${backendUrl}/leetcode/${username}`)
       </div>
 
       {/* Easy */}
-      <div className=" p-6 card-hover">
+      <div className="p-6 card-hover">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-full bg-primary/10">
             <Smile className="h-6 w-6 text-green-500" />
@@ -64,7 +64,7 @@ fetch(`${backendUrl}/leetcode/${username}`)
       </div>
 
       {/* Medium */}
-      <div className=" p-6 card-hover">
+      <div className="p-6 card-hover">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-full bg-primary/10">
             <ThumbsUp className="h-6 w-6 text-yellow-500" />
@@ -77,10 +77,10 @@ fetch(`${backendUrl}/leetcode/${username}`)
       </div>
 
       {/* Hard */}
-      <div className=" p-6 card-hover">
+      <div className="p-6 card-hover">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-full bg-primary/10">
-            <BicepsFlexed className="h-6 w-6 text-red-500" />
+            <Zap className="h-6 w-6 text-red-500" />
           </div>
           <div className="text-left">
             <h4 className="font-semibold text-lg">Hard</h4>

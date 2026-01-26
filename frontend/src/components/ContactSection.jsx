@@ -33,11 +33,12 @@ export const ContactSection = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  // ✅ Basic validation before sending
+  // Basic validation
   if (!formData.from_name || !formData.from_email || !formData.message) {
     alert("Please fill in all fields.");
     return;
   }
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(formData.from_email)) {
     alert("Please enter a valid email address.");
@@ -47,29 +48,33 @@ const handleSubmit = async (e) => {
   setSending(true);
 
   try {
-      // const URL = `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`;
-      const backendUrl = import.meta.env.VITE_BACKEND_URL;
-    const res = await fetch(`${backendUrl}/send-email`, {
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", "8a91f185-efd4-442b-85da-ba7fc1198364");
+    formDataToSend.append("name", formData.from_name);
+    formDataToSend.append("email", formData.from_email);
+    formDataToSend.append("message", formData.message);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
+      body: formDataToSend,
     });
 
-    const data = await res.json();
+    const data = await response.json();
+
     if (data.success) {
       setSubmitted(true);
-      // alert("✅ Your message was sent successfully!");
       setFormData({ from_name: "", from_email: "", message: "" });
     } else {
-      alert(`❌ Error: ${data.message}`);
+      alert("❌ Something went wrong. Please try again.");
     }
   } catch (error) {
-    alert("❌ Failed to send email. Please try again.");
-    console.error("Error sending email:", error);
+    console.error("Web3Forms Error:", error);
+    alert("❌ Failed to send message.");
   } finally {
     setSending(false);
   }
 };
+
 
 
   return (
@@ -123,7 +128,7 @@ const handleSubmit = async (e) => {
 
 
           {submitted && (
-            <p className="contact-success">Success! Your message is on its way. <i class="fa-solid fa-circle-check"></i> </p>
+            <p className="contact-success">Success! Your message is on its way. <i className="fa-solid fa-circle-check"></i> </p>
           )}
         </form>
 

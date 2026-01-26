@@ -129,7 +129,7 @@ const ResumeSection = () => {
               <small>
                 <span className="file-type">PDF</span> •
                 <span className="file-size">63.5KB</span> •
-                <span className="last-updated">Updated Sep 2025</span>
+                <span className="last-updated">Updated Janu 2025</span>
               </small>
             </div>
           </div>

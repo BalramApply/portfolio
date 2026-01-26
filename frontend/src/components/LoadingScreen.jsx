@@ -1,30 +1,28 @@
-import React, { useEffect, useState, useMemo, memo } from 'react';
+import React, { useEffect, useState, useMemo, memo, useRef } from 'react';
 import './LoadingScreen.css';
 
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
+  const hasCompleted = useRef(false); // prevents double calls
 
-  
+  // Progress animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          onLoadingComplete();
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, 100); 
+      setProgress((prev) => Math.min(prev + 1, 100));
+    }, 100);
 
     return () => clearInterval(interval);
-  }, [onLoadingComplete]);
+  }, []);
 
- 
+  // Call parent ONLY when progress reaches 100
+  useEffect(() => {
+    if (progress === 100 && !hasCompleted.current) {
+      hasCompleted.current = true;
+      onLoadingComplete();
+    }
+  }, [progress, onLoadingComplete]);
+
   const letters = useMemo(() => ['L', 'O', 'A', 'D', 'I', 'N', 'G'], []);
-  
-
-
 
   const milestoneMessages = useMemo(() => ({
     0: 'Initializing My Portfolio...',
@@ -32,10 +30,9 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     40: 'Configuring All Sections...',
     60: 'Optimizing UI...',
     80: 'Finalizing My Portfolio...',
-    100: 'Portfolio Loaded'
+    100: 'Portfolio Loaded',
   }), []);
 
-  
   const currentMessage = useMemo(() => {
     if (progress >= 80) return milestoneMessages[80];
     if (progress >= 60) return milestoneMessages[60];
@@ -44,37 +41,38 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     return milestoneMessages[0];
   }, [progress, milestoneMessages]);
 
-
-  const particles = useMemo(() => 
-    Array.from({ length: 20 }, () => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
-      delay: Math.random() * 2,
-    })), []
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, () => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 4 + 2,
+        delay: Math.random() * 2,
+      })),
+    []
   );
 
   return (
     <div className="loader-container">
       <div className="gradient-overlay" />
+
       <div className="particles">
-        {particles.map((particle, index) => (
+        {particles.map((p, i) => (
           <div
-            key={index}
+            key={i}
             className="particle"
             style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              animationDelay: `${particle.delay}s`,
+              left: `${p.x}%`,
+              top: `${p.y}%`,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              animationDelay: `${p.delay}s`,
             }}
           />
         ))}
       </div>
-     
+
       <div className="letters-row">
-        
         {letters.map((letter, index) => (
           <svg
             key={index}
@@ -96,16 +94,15 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           </svg>
         ))}
       </div>
+
       <div className="milestone-text">{currentMessage}</div>
-      
+
       <div className="progress-bar-container">
-        <div
-          className="progress-bar"
-          style={{ width: `${progress}%` }}
-        />
+        <div className="progress-bar" style={{ width: `${progress}%` }} />
         <div className="progress-bar-glow" />
         <div className="progress-bar-shine" />
       </div>
+
       <div className="progress-text">
         <span className="progress-number">{progress}</span>
         <span className="progress-percent">%</span>

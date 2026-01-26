@@ -5,7 +5,7 @@ import "./Navbar.css";
 const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
+  { name: "Certification", href: "#certification" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
   { name: "Leetcode", href: "#leetcode" },
@@ -27,7 +27,7 @@ export const NavBar = () => {
   }, []);
   
   return (
-    <nav
+    <nav 
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
         isScrolled ? "py-3" : "py-10"

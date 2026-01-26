@@ -17,7 +17,7 @@ export const FooterSection = () => {
         <nav className="site-footer__nav">
           <a href="#home" className="site-footer__link">Home</a>
           <a href="#about" className="site-footer__link">About</a>
-          <a href="#skills" className="site-footer__link">Skills</a>
+          <a href="#certification" className="site-footer__link">Certification</a>
           <a href="#projects" className="site-footer__link">Projects</a>
           <a href="#experience" className="site-footer__link">Experience</a>
           <a href="#leetcode" className="site-footer__link">Leetcode</a>

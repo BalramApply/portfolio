@@ -1,5 +1,4 @@
 import express from "express";
-import nodemailer from "nodemailer";
 import cors from "cors";
 import dotenv from "dotenv";
 import fetch from "node-fetch";
@@ -20,44 +19,6 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
-// ---------------- EMAIL API -----------------
-app.post("/send-email", async (req, res) => {
-  const { from_name, from_email, message } = req.body;
-  console.log("Incoming data:", JSON.stringify(req.body, null, 2));
-
-  // ✅ Validation
-  if (!from_name || !from_email || !message) {
-    return res.status(400).json({ success: false, message: "All fields are required" });
-  }
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(from_email)) {
-    return res.status(400).json({ success: false, message: "Invalid email format" });
-  }
-
-  try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
-
-    await transporter.sendMail({
-      from: `"${from_name}" <${from_email}>`,
-      to: process.env.RECEIVER_EMAIL,
-      subject: `New message from ${from_name}`,
-      text: message,
-      html: `<p>${message}</p>`
-    });
-
-    res.json({ success: true, message: "Email sent successfully" });
-  } catch (error) {
-    console.error("Email sending failed:", error);
-    res.status(500).json({ success: false, message: "Email sending failed" });
-  }
-});
 
 // ---------------- LEETCODE API -----------------
 app.get("/leetcode/:username", async (req, res) => {

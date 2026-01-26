@@ -1,0 +1,298 @@
+/* Certificate Card Styles */
+.certificate-card {
+  perspective: 1000px;
+  height: 400px;
+  position: relative;
+}
+
+.certificate-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.certificate-card:hover .certificate-inner {
+  transform: rotateY(180deg);
+}
+
+.certificate-front,
+.certificate-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificate-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+/* Image Wrapper */
+.certificate-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.certificate-image-wrapper img {
+  transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-image-wrapper img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.certificate-card:hover .certificate-overlay {
+  opacity: 1;
+}
+
+/* Animated Border */
+.certificate-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
+  border-radius: 1rem;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  animation: rotate 3s linear infinite;
+}
+
+.certificate-card:hover::before {
+  opacity: 0.5;
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Glow Effect */
+.certificate-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: borderGlow 2s linear infinite;
+}
+
+.certificate-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Confetti */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  opacity: 0;
+  animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Modal Animations */
+@keyframes modalZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotateY(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateY(0);
+  }
+}
+
+@keyframes modalZoomOut {
+  from {
+    opacity: 1;
+    transform: scale(1) rotateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5) rotateY(180deg);
+  }
+}
+
+/* Scrollbar Styling */
+.overflow-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .certificate-card {
+    height: 350px;
+  }
+
+  .certificate-image-wrapper {
+    height: 200px;
+  }
+}
+
+/* Shimmer Loading Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.certificate-card.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Pulse Animation for New Certificates */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+.certificate-card.new {
+  animation: pulse 2s infinite;
+}
+
+/* Category Badge Hover */
+.certificate-card span {
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover span {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Text Highlight Animation */
+@keyframes highlightText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.certificate-back h3 {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: highlightText 3s ease infinite;
+}
+
+/* Mobile Swipe Indicator */
+@media (max-width: 768px) {
+  .certificate-card::after {
+    content: '← Swipe →';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .certificate-card:hover::after {
+    opacity: 1;
+  }
+}
