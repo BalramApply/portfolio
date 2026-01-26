@@ -11,8 +11,8 @@ const app = express();
 // ✅ Proper CORS configuration
 app.use(cors({
   origin: [
-    "http://localhost:5173", 
-    "https://portfolio-balram-indol.vercel.app"
+    // "http://localhost:5173", 
+    "https://bp-portfolio.vercel.app"
   ],
   methods: ["GET", "POST"],
   credentials: true
